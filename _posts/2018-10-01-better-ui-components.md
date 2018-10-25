@@ -398,7 +398,7 @@ _Riot_
 </s-alert>
 ```
 
-Regardless of implementation, our makrup for Alert with the overrideable `autodismiss` hasn't changed:
+Regardless of implementation, our markup for Alert with the overrideable `autodismiss` hasn't changed:
 ```html
 <s-alert type="success" autodismiss="10">
   <p>Custom tags are great!</p>
