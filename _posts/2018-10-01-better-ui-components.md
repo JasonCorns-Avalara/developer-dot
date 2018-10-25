@@ -442,9 +442,6 @@ Being able to write apps built with this kind of standards-based markup is not j
 </body>
 ```
 
-
->>> Careful with this commentary; "started over-engineering everything in sight" is unexpectedly aggressive.
-
 Now I know this doesn't address the hard problem of application state management and having the UI reliably reflect that state. That's what React, and others, have solved. The front-end community seems to have been unable to take a balanced approach to adopting these new technologies and just started over-engineering everything in sight. It's very pervasive in the React community in particular. I'll go out on a limb and say that if you use React you no doubt have an over-engineered app, or at least in part. When I see things like this I just wonder, 'what the heck are all the React devs doing to themselves', (these are real React components, there are 100's of examples out there like this):
 ```html
 <DisplayText size="extraLarge" element="h4">Good evening, Dominic.</DisplayText>
