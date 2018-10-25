@@ -13,10 +13,12 @@ disqus: 1
 # Custom HTML Tags
 ## How to design better UI components and avoid over-engineering
 
-**tl;dr:** a new approach and it's NOT another js thing vying for market share. Yay!
+**tl;dr:** it's a new approach and it's NOT another js thing vying for market share. Yay!
 
 ### HTML now and forever
-HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for login and search UI!).
+I like writing code. I've written in Java, PHP, C#, perl *shutters*, and JavaScript. As much as I love js, my favorite is probably HTML because of the way its declarative nature allows me to easily express what I'm envisioning in my mind and, with one click of the refresh button, I get to immediately see my creation on screen. It's design and engineering all in one motion and I love it! But HTML doesn't get the kind of use it ought to. Let's take a brief look at the basics and dig into a new approach that you might find worth considering.
+
+So HTML’s job is to give content structure and meaning. This is called semantics. As the web progressed HTML adapted to include new elements to provide semantic support for more content, like `<nav>` for navigation and `<video>` for videos and `<article>` for, well, articles. Over the years it also added new capabilities to existing elements like the addition of the `autofocus` attribute, which tells the browser which element to focus on page load (you know that one is a must for login and search UI!).
 
 These additions were implemented through the usual HTML constructs: *tags*, *attributes*, and *nesting*. In case you need a refresher, here's some examples:
 
@@ -242,6 +244,7 @@ Nice! We've really got ourselves a useful component without a single build step 
 * `alert` tag
 * `type` attribute (_required_) - one of "success", "warn", or "error"
 * `autodismiss` attribute (_optional_) - if present, the Alert will disappear after four seconds
+* `id`, `class`, `aria-` and other "inherited" attributes still apply
 * `transitionend` event - DOM event, fires after Alert disappears
 * Accepts nested content, including other custom tags
 
@@ -262,7 +265,9 @@ Although these aren't technically Custom Elements at this point, you'll want to 
 * **s**hared - these components are shared by our 20+ web apps and three times as many developers
 * **S**eattle - ok not really, but that's where we are! Come [join us](https://www.avalara.com/us/en/about/jobs/job-details.oUKm8fwS.html)
 
-Prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly, it sets you up very nicely for when JavaScript-enabled functionality is required and your happy little "micro" component needs to grow up and become a true Custom Element (or similar). You see, using prefixed custom tags instead of classes allows your component to scale in either direction: you can scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes _all while maintaining the same interface_. The secret is prefixed custom tags.
+
+Prefixing is a best-practice. It solves the risk of colliding tags and it's a helpful visual distinguisher between standard and custom tags. More importantly it sets you up very nicely for when JavaScript-enabled functionality is required and your happy little "micro" component needs to grow up and become a true Custom Element (or similar). You see, using prefixed custom tags instead of classes allows your components to scale in either direction: you can scale down to lightweight CSS-only components like icon, or all the way up to interactive components that respond to state changes _all while maintaining the same HTML interface_. The secret is prefixed custom tags.
+
 
 Let's see how our Alert can go from a basic custom tag with styles to interactive JavaScript-enabled component without breaking changes or a shifting paradigm.
 
@@ -359,7 +364,7 @@ _Custom Elements + `<template>` element_
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-      // Update the attribute
+      // Update the type or autodismiss attribute
     }
 
     connectedCallback() {
@@ -462,11 +467,11 @@ The overuse of these libraries diminishes the potential gains, even to the point
 
 _Should an engineer write a dozen lines of CSS to make Badge, or should they write **474 total lines of code across 8 files with multiple dependencies and a mandatory build pipleine**?_ (true story btw)
 
-"So it can scale!" I hear. So it can. 
+"So it can scale," I hear. So it can...and yet 9 out of 10 implementations were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and now the app has 10x the amount of code as necessary and an extremely high degree of dependency. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
 
->>> this sentence confuses me; I think I'm caught in the triple negative of 'yet...not...but'.  Consider revising?
-And yet 9 out of 10 implementations were in zero danger of not being able to scale, but all 10 were solved with [insert favorite js library] and now the app has 10x the amount of code necessary. Can it scale _down_? Down so much that it can get out of its own way and not be needed at all? 
+And that's really what the custom tag approach is about. Yes, a tag plus attributes design is much nicer than class-based (the time for that switch has definitely come), but being able to design and build components that scale in either direction with good ol' HTML across a wide range of use cases is a very compelling opportunity!
 
-And that's really what the custom tag approach is about. Yes, a tag and attribute design is much nicer than class-based (the time for that switch has definitely come), but being able to design and build components that scale in either direction using standards-based HTML constructs (prefixed tag, attributes, and nesting), across a wide range of use cases, is a very compelling opportunity!
+## Conclusion
+Custom HTML tags, Web Components, the Custom Elements spec and the few js libs that stay close to it - that's the path to designing better UI components and getting past this over-engineered era. 
 
-Custom tags, Web Components, the Custom Elements spec, and the few js libs that stay close to it - that's the path to designing better UI components and getting past this over-engineered era.
+Loved it? Hated it? Any custom tag experience you'd like to share? Comment below!
