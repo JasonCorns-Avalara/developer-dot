@@ -161,7 +161,7 @@ Are you starting to sense the benefits?
 
 Designing these simple UI components with tags and attributes instead of classes is fun and it's better. It is objectively better:
 
-* RThis approach enables UI engineers to design components with much more meaningful APIs instead of a boilerplate tag and list of classes.
+* This approach enables UI engineers to design components with much more meaningful APIs instead of a boilerplate tag and list of classes.
 * Custom tags have strong semantic meaning and are easily identifiable: `<badge>` vs. `<span class="badge">`.
 * No more BEM or similar methodologies for engineering around the problems with class-based design.
 * In many cases you can ditch the need for abstraction: `{{> icon name="phone"}}` or `<OverEngineeredIcon name="phone"/>` is replaced with `<icon name="phone"></icon>`.
