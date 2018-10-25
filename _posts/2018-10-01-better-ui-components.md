@@ -92,7 +92,7 @@ Other approaches get even weirder:
 
 ### Custom HTML tags
 
-We don't have to do it this way. We don't have to use classes or trickery. There's something better. We can design custom components with more meaningful APIs by using tags, attributes, and nesting - just like real elements. Here's what that means:
+We can design custom components with more meaningful APIs by using tags, attributes, and nesting - just like real elements. Here's what that means:
 
 _A typical class-based design_
 ```html
